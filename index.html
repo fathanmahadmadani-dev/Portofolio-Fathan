@@ -13,12 +13,12 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            900: '#0c4a6e',
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            900: '#581c87',
                         }
                     }
                 }
@@ -28,6 +28,22 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        /* Modern Dark Purple Mesh Gradient */
+        body {
+            background-color: #090314;
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(147, 51, 234, 0.18) 0px, transparent 40%),
+                radial-gradient(at 90% 90%, rgba(79, 70, 229, 0.15) 0px, transparent 40%),
+                radial-gradient(at 50% 50%, rgba(192, 38, 211, 0.08) 0px, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        /* Topography Line Pattern (Inspirasi PDF Purple Dynamic) */
+        .contour-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23c084fc' stroke-width='1' stroke-opacity='0.08'%3E%3Cpath d='M-100,100 C300,50 500,350 900,150' /%3E%3Cpath d='M-100,200 C350,150 550,450 950,250' /%3E%3Cpath d='M-100,300 C400,250 600,550 1000,350' /%3E%3Cpath d='M-100,400 C450,350 650,650 1050,450' /%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -41,16 +57,23 @@
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
         .delay-400 { transition-delay: 400ms; }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(20, 10, 38, 0.65);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            backdrop-filter: blur(16px);
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white font-sans">
+<body class="text-slate-100 antialiased selection:bg-brand-500 selection:text-white font-sans contour-pattern">
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#090314]/80 backdrop-blur-md border-b border-purple-900/40">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="#page1" class="font-bold text-lg tracking-wider text-slate-100 flex items-center gap-2">
                 <span class="w-3 h-3 rounded-full bg-brand-500 inline-block animate-pulse"></span>
-                Portofolio
+                PORTOFOLIO
             </a>
             <nav class="hidden md:flex items-center gap-6 text-xs lg:text-sm font-medium text-slate-400">
                 <a href="#page1" class="hover:text-brand-400 transition-colors">Profil & Keahlian</a>
@@ -58,7 +81,7 @@
                 <a href="#page3" class="hover:text-brand-400 transition-colors">Analisis Operasional & Alokasi SDM</a>
                 <a href="#page4" class="hover:text-brand-400 transition-colors">Technical VJ & Kontak</a>
             </nav>
-            <a href="mailto:fathanmahadmadani@gmail.com" class="bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-brand-600/20">
+            <a href="mailto:fathanmahadmadani@gmail.com" class="bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-brand-600/30">
                 Hubungi Saya
             </a>
         </div>
@@ -69,10 +92,10 @@
 
         <!-- ================= PAGE 1 ================= -->
         <section id="page1" class="min-h-[85vh] flex flex-col justify-center scroll-mt-24">
-            <div class="reveal bg-slate-900/50 border border-slate-800 rounded-2xl p-6 md:p-10 backdrop-blur-sm relative overflow-hidden shadow-2xl">
+            <div class="reveal glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden shadow-2xl">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl -z-10"></div>
                 
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-slate-800/80 pb-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-purple-900/40 pb-8">
                     <div>
                         <span class="text-xs font-semibold uppercase tracking-widest text-brand-400 bg-brand-950/60 border border-brand-800/50 px-3 py-1 rounded-full mb-3 inline-block">
                             Page 1
@@ -89,7 +112,7 @@
                     </div>
                     
                     <!-- Contacts & Links -->
-                    <div class="bg-slate-950/60 border border-slate-800/80 p-4 rounded-xl text-sm space-y-2.5 w-full md:w-auto">
+                    <div class="bg-black/40 border border-purple-900/40 p-4 rounded-xl text-sm space-y-2.5 w-full md:w-auto">
                         <div class="flex items-center gap-3 text-slate-300">
                             <i data-lucide="map-pin" class="w-4 h-4 text-brand-400 flex-shrink-0"></i>
                             <span>Jakarta, Indonesia</span>
@@ -102,7 +125,6 @@
                             <i data-lucide="phone" class="w-4 h-4 text-brand-400 flex-shrink-0"></i>
                             <span>(+62) 897 8297 879</span>
                         </a>
-                        <!-- SVG Icon LinkedIn Pasti Renders -->
                         <a href="https://linkedin.com/in/fathan-mahad-madani" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-slate-300 hover:text-brand-400 transition-colors">
                             <svg class="w-4 h-4 fill-current text-brand-400 flex-shrink-0" viewBox="0 0 24 24">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.7a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"/>
@@ -125,19 +147,19 @@
 
                 <!-- Stats At A Glance -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 reveal delay-200">
-                    <div class="bg-slate-950/40 border border-slate-800/60 p-4 rounded-xl text-center">
+                    <div class="bg-black/30 border border-purple-900/40 p-4 rounded-xl text-center">
                         <div class="text-2xl md:text-3xl font-bold text-brand-400 mb-1">75+</div>
                         <div class="text-xs text-slate-400">Proyek Dikoordinasikan</div>
                     </div>
-                    <div class="bg-slate-950/40 border border-slate-800/60 p-4 rounded-xl text-center">
+                    <div class="bg-black/30 border border-purple-900/40 p-4 rounded-xl text-center">
                         <div class="text-2xl md:text-3xl font-bold text-brand-400 mb-1">20+</div>
                         <div class="text-xs text-slate-400">Tim per Acara Dipimpin</div>
                     </div>
-                    <div class="bg-slate-950/40 border border-slate-800/60 p-4 rounded-xl text-center">
+                    <div class="bg-black/30 border border-purple-900/40 p-4 rounded-xl text-center">
                         <div class="text-2xl md:text-3xl font-bold text-brand-400 mb-1">100+</div>
                         <div class="text-xs text-slate-400">Mitra/Vendor Di-QA</div>
                     </div>
-                    <div class="bg-slate-950/40 border border-slate-800/60 p-4 rounded-xl text-center">
+                    <div class="bg-black/30 border border-purple-900/40 p-4 rounded-xl text-center">
                         <div class="text-2xl md:text-3xl font-bold text-brand-400 mb-1">60+</div>
                         <div class="text-xs text-slate-400">Dokumen Operasional/Bln</div>
                     </div>
@@ -150,21 +172,21 @@
                         Kecakapan & Keahlian Utama
                     </h2>
                     <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80">
+                        <div class="bg-black/40 p-4 rounded-xl border border-purple-900/40">
                             <h3 class="font-semibold text-white mb-1 text-sm">1. Manajemen Produksi</h3>
                             <p class="text-xs text-slate-400">Perencanaan alur acara, venue handling, kontrol jadwal load-in/out, dan supervisi panggung.</p>
                         </div>
-                        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80">
+                        <div class="bg-black/40 p-4 rounded-xl border border-purple-900/40">
                             <h3 class="font-semibold text-white mb-1 text-sm">2. Vendor Sourcing</h3>
-                            <p class="text-xs text-slate-400">Seleksi vendor teknis (lighting, sound, LED), dan pengawasan eksekusi.</p>
+                            <p class="text-xs text-slate-400">Seleksi vendor teknis (lighting, sound, LED), negosiasi harga, dan pengawasan eksekusi.</p>
                         </div>
-                        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80">
+                        <div class="bg-black/40 p-4 rounded-xl border border-purple-900/40">
                             <h3 class="font-semibold text-white mb-1 text-sm">3. Analisis Operasional</h3>
                             <p class="text-xs text-slate-400">Quality Assurance (QA) mitra, pengelolaan alokasi SDM, dan pelaporan administrasi.</p>
                         </div>
-                        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80">
+                        <div class="bg-black/40 p-4 rounded-xl border border-purple-900/40">
                             <h3 class="font-semibold text-white mb-1 text-sm">4. VJ & Multimedia</h3>
-                            <p class="text-xs text-slate-400">Pengoperasian software kontrol visual (VMix, OBS Studio), dan sistem hybrid.</p>
+                            <p class="text-xs text-slate-400">Pengoperasian software kontrol visual (VMix, OBS Studio), editing visual, dan sistem hybrid.</p>
                         </div>
                     </div>
                 </div>
@@ -173,7 +195,7 @@
 
         <!-- ================= PAGE 2 ================= -->
         <section id="page2" class="min-h-[85vh] flex flex-col justify-center scroll-mt-24">
-            <div class="reveal bg-slate-900/50 border border-slate-800 rounded-2xl p-6 md:p-10 backdrop-blur-sm relative overflow-hidden shadow-2xl">
+            <div class="reveal glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden shadow-2xl">
                 <span class="text-xs font-semibold uppercase tracking-widest text-brand-400 bg-brand-950/60 border border-brand-800/50 px-3 py-1 rounded-full mb-3 inline-block">
                     Page 2
                 </span>
@@ -185,14 +207,14 @@
                 </p>
 
                 <!-- Role Details -->
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 mb-8 text-xs md:text-sm reveal delay-100">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 p-4 bg-black/40 rounded-xl border border-purple-900/40 mb-8 text-xs md:text-sm reveal delay-100">
                     <div>
                         <span class="text-slate-400 block">Peran:</span>
                         <span class="font-semibold text-white">Project Coordinator</span>
                     </div>
                     <div>
                         <span class="text-slate-400 block">Perusahaan:</span>
-                        <span class="font-semibold text-white">Ods.Pro x Kompas</span>
+                        <span class="font-semibold text-white">Ods.Pro x ANGIN Foundation</span>
                     </div>
                     <div>
                         <span class="text-slate-400 block">Skala & Status:</span>
@@ -202,7 +224,7 @@
 
                 <!-- STAR Breakdown -->
                 <div class="grid md:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-slate-950/40 border border-slate-800/60 p-5 rounded-xl reveal delay-100">
+                    <div class="bg-black/30 border border-purple-900/40 p-5 rounded-xl reveal delay-100">
                         <h3 class="text-sm font-bold text-slate-200 mb-2 flex items-center gap-2">
                             <i data-lucide="alert-circle" class="w-4 h-4 text-amber-400"></i>
                             Situasi & Tantangan
@@ -214,7 +236,7 @@
                         </ul>
                     </div>
 
-                    <div class="bg-slate-950/40 border border-slate-800/60 p-5 rounded-xl reveal delay-200">
+                    <div class="bg-black/30 border border-purple-900/40 p-5 rounded-xl reveal delay-200">
                         <h3 class="text-sm font-bold text-slate-200 mb-2 flex items-center gap-2">
                             <i data-lucide="sliders" class="w-4 h-4 text-brand-400"></i>
                             Tindakan Operasional
@@ -226,21 +248,21 @@
                         </ul>
                     </div>
 
-                    <div class="bg-slate-950/40 border border-slate-800/60 p-5 rounded-xl reveal delay-300">
+                    <div class="bg-black/30 border border-purple-900/40 p-5 rounded-xl reveal delay-300">
                         <h3 class="text-sm font-bold text-slate-200 mb-2 flex items-center gap-2">
                             <i data-lucide="trophy" class="w-4 h-4 text-emerald-400"></i>
                             Hasil & Impact Terukur
                         </h3>
                         <div class="space-y-3 mt-3">
-                            <div class="p-2.5 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <div class="p-2.5 bg-black/60 rounded-lg border border-purple-900/40">
                                 <div class="text-xs text-slate-400">Risiko Delay</div>
                                 <div class="text-sm font-bold text-emerald-400">0 Risiko Delay (Tepat Timeline)</div>
                             </div>
-                            <div class="p-2.5 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <div class="p-2.5 bg-black/60 rounded-lg border border-purple-900/40">
                                 <div class="text-xs text-slate-400">Sinkronisasi Vendor</div>
                                 <div class="text-sm font-bold text-brand-400">100% Vendor Sync & Presisi</div>
                             </div>
-                            <div class="p-2.5 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <div class="p-2.5 bg-black/60 rounded-lg border border-purple-900/40">
                                 <div class="text-xs text-slate-400">Persetujuan Proposal</div>
                                 <div class="text-sm font-bold text-slate-200">Proposal Hybrid Disetujui Mitra</div>
                             </div>
@@ -249,15 +271,15 @@
                 </div>
 
                 <!-- Workflow Step -->
-                <div class="reveal delay-400 bg-slate-950/60 p-4 rounded-xl border border-slate-800/80">
+                <div class="reveal delay-400 bg-black/40 p-4 rounded-xl border border-purple-900/40">
                     <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
                         Alur Kerja Supervisi Produksi Lapangan:
                     </h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center text-xs">
-                        <div class="p-2 bg-slate-900 rounded border border-slate-800 text-slate-300">1. Venue Scouting & Risk Mapping</div>
-                        <div class="p-2 bg-slate-900 rounded border border-slate-800 text-slate-300">2. Vendor Sourcing & Tech Spec</div>
-                        <div class="p-2 bg-slate-900 rounded border border-slate-800 text-slate-300">3. Daily Briefing & Rundown Lock</div>
-                        <div class="p-2 bg-slate-900 rounded border border-slate-800 text-slate-300">4. On-Site Execution & VJ Control</div>
+                        <div class="p-2 bg-black/50 rounded border border-purple-900/40 text-slate-300">1. Venue Scouting & Risk Mapping</div>
+                        <div class="p-2 bg-black/50 rounded border border-purple-900/40 text-slate-300">2. Vendor Sourcing & Tech Spec</div>
+                        <div class="p-2 bg-black/50 rounded border border-purple-900/40 text-slate-300">3. Daily Briefing & Rundown Lock</div>
+                        <div class="p-2 bg-black/50 rounded border border-purple-900/40 text-slate-300">4. On-Site Execution & VJ Control</div>
                     </div>
                 </div>
             </div>
@@ -265,7 +287,7 @@
 
         <!-- ================= PAGE 3 ================= -->
         <section id="page3" class="min-h-[85vh] flex flex-col justify-center scroll-mt-24">
-            <div class="reveal bg-slate-900/50 border border-slate-800 rounded-2xl p-6 md:p-10 backdrop-blur-sm relative overflow-hidden shadow-2xl">
+            <div class="reveal glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden shadow-2xl">
                 <span class="text-xs font-semibold uppercase tracking-widest text-brand-400 bg-brand-950/60 border border-brand-800/50 px-3 py-1 rounded-full mb-3 inline-block">
                     Page 3
                 </span>
@@ -280,13 +302,13 @@
                 <div class="overflow-x-auto mb-8 reveal delay-100">
                     <table class="w-full text-left text-xs md:text-sm border-collapse">
                         <thead>
-                            <tr class="border-b border-slate-800 text-slate-400 bg-slate-950/80">
+                            <tr class="border-b border-purple-900/60 text-slate-400 bg-black/50">
                                 <th class="p-3">Parameter Operasional</th>
                                 <th class="p-3">Volume / Minggu</th>
                                 <th class="p-3">Tingkat Akurasi / Standar</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-800/60 text-slate-300 bg-slate-950/30">
+                        <tbody class="divide-y divide-purple-900/30 text-slate-300 bg-black/20">
                             <tr>
                                 <td class="p-3 font-semibold text-white">Pemeriksaan QA Mitra Baru</td>
                                 <td class="p-3">100+ Mitra / minggu</td>
@@ -309,7 +331,7 @@
                 <!-- Achievements -->
                 <div class="grid md:grid-cols-2 gap-6 mb-8">
                     <div class="space-y-4 reveal delay-200">
-                        <div class="bg-slate-950/40 p-4 rounded-xl border border-slate-800/60">
+                        <div class="bg-black/30 p-4 rounded-xl border border-purple-900/40">
                             <h3 class="text-sm font-bold text-white mb-1 flex items-center gap-2">
                                 <i data-lucide="users" class="w-4 h-4 text-brand-400"></i>
                                 Alokasi Tenaga Kerja Presisi
@@ -318,7 +340,7 @@
                                 Berhasil mengolah data kualifikasi dan mendistribusikan 50-100 tenaga kerja harian sesuai jadwal kebutuhan proyek tanpa kendala ketersediaan.
                             </p>
                         </div>
-                        <div class="bg-slate-950/40 p-4 rounded-xl border border-slate-800/60">
+                        <div class="bg-black/30 p-4 rounded-xl border border-purple-900/40">
                             <h3 class="text-sm font-bold text-white mb-1 flex items-center gap-2">
                                 <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
                                 Resolusi Isu Mitra
@@ -329,7 +351,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/80 reveal delay-300 flex flex-col justify-between">
+                    <div class="bg-black/40 p-5 rounded-xl border border-purple-900/40 reveal delay-300 flex flex-col justify-between">
                         <div>
                             <h3 class="text-sm font-bold text-brand-400 mb-2 flex items-center gap-2">
                                 <i data-lucide="heart-handshake" class="w-4 h-4 text-brand-400"></i>
@@ -339,7 +361,7 @@
                                 Memanfaatkan latar belakang Ilmu Komunikasi dan pengalaman penanganan SDM organisasi untuk memberikan arahan, saran perbaikan kinerja, dan metode penyelesaian masalah interpersonal bagi anggota tim lapangan. Pendekatan ini menjaga motivasi tim tetap tinggi meski dalam tekanan operasional yang ketat.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400 italic">
+                        <div class="mt-4 pt-3 border-t border-purple-900/40 text-xs text-slate-400 italic">
                             "Menyeimbangkan ketegasan administrasi dengan pendekatan emosional tim."
                         </div>
                     </div>
@@ -349,12 +371,12 @@
 
         <!-- ================= PAGE 4 ================= -->
         <section id="page4" class="min-h-[85vh] flex flex-col justify-center scroll-mt-24">
-            <div class="reveal bg-slate-900/50 border border-slate-800 rounded-2xl p-6 md:p-10 backdrop-blur-sm relative overflow-hidden shadow-2xl">
+            <div class="reveal glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden shadow-2xl">
                 <span class="text-xs font-semibold uppercase tracking-widest text-brand-400 bg-brand-950/60 border border-brand-800/50 px-3 py-1 rounded-full mb-3 inline-block">
                     Page 4
                 </span>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-1">
-                    MULTIMEDIA & VISUAL CONTROL/MULTICAM
+                    MULTIMEDIA, TECHNICAL VJ & VISUAL CONTROL
                 </h2>
                 <p class="text-brand-400 font-medium mb-8 text-sm md:text-base">
                     Pengalaman teknis dalam mengoperasikan software pengontrol visual panggung dan siaran langsung.
@@ -362,7 +384,7 @@
 
                 <!-- Tools Grid -->
                 <div class="grid md:grid-cols-3 gap-4 mb-8 reveal delay-100">
-                    <div class="bg-slate-950/50 p-5 rounded-xl border border-slate-800/80 hover:border-brand-500/50 transition-all">
+                    <div class="bg-black/40 p-5 rounded-xl border border-purple-900/40 hover:border-brand-500/50 transition-all">
                         <div class="w-10 h-10 rounded-lg bg-brand-950 border border-brand-800/50 flex items-center justify-center text-brand-400 mb-3 font-bold">
                             VM
                         </div>
@@ -372,7 +394,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-slate-950/50 p-5 rounded-xl border border-slate-800/80 hover:border-brand-500/50 transition-all">
+                    <div class="bg-black/40 p-5 rounded-xl border border-purple-900/40 hover:border-brand-500/50 transition-all">
                         <div class="w-10 h-10 rounded-lg bg-brand-950 border border-brand-800/50 flex items-center justify-center text-brand-400 mb-3 font-bold">
                             OBS
                         </div>
@@ -382,7 +404,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-slate-950/50 p-5 rounded-xl border border-slate-800/80 hover:border-brand-500/50 transition-all">
+                    <div class="bg-black/40 p-5 rounded-xl border border-purple-900/40 hover:border-brand-500/50 transition-all">
                         <div class="w-10 h-10 rounded-lg bg-brand-950 border border-brand-800/50 flex items-center justify-center text-brand-400 mb-3 font-bold">
                             PS
                         </div>
@@ -394,7 +416,7 @@
                 </div>
 
                 <!-- Checklist Box -->
-                <div class="bg-slate-950/80 border border-slate-800 p-6 rounded-xl mb-10 reveal delay-200">
+                <div class="bg-black/60 border border-purple-900/40 p-6 rounded-xl mb-10 reveal delay-200">
                     <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
                         <i data-lucide="check-square" class="w-4 h-4 text-emerald-400"></i>
                         Checklist Kesiapan Teknis Control Booth (Pre-Event)
@@ -422,7 +444,7 @@
                 </div>
 
                 <!-- CTA Banner -->
-                <div class="bg-gradient-to-r from-brand-950/80 to-slate-900 border border-brand-800/50 p-6 md:p-8 rounded-xl text-center reveal delay-300">
+                <div class="bg-gradient-to-r from-purple-950/80 to-slate-900 border border-brand-800/50 p-6 md:p-8 rounded-xl text-center reveal delay-300">
                     <h3 class="text-xl md:text-2xl font-bold text-white mb-2">
                         Siap Mengoordinasikan Proyek & Operasional Anda Berikutnya
                     </h3>
@@ -434,11 +456,11 @@
                             <i data-lucide="mail" class="w-4 h-4"></i>
                             fathanmahadmadani@gmail.com
                         </a>
-                        <a href="https://wa.me/628978297879" target="_blank" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-lg border border-slate-700 transition-all flex items-center justify-center gap-2">
+                        <a href="https://wa.me/628978297879" target="_blank" class="w-full sm:w-auto bg-black/40 hover:bg-black/60 text-slate-200 font-semibold px-6 py-3 rounded-lg border border-purple-900/40 transition-all flex items-center justify-center gap-2">
                             <i data-lucide="phone" class="w-4 h-4"></i>
                             (+62) 897 8297 879
                         </a>
-                        <a href="https://linkedin.com/in/fathan-mahad-madani" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-lg border border-slate-700 transition-all flex items-center justify-center gap-2">
+                        <a href="https://linkedin.com/in/fathan-mahad-madani" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-black/40 hover:bg-black/60 text-slate-200 font-semibold px-6 py-3 rounded-lg border border-purple-900/40 transition-all flex items-center justify-center gap-2">
                             <svg class="w-4 h-4 fill-current text-slate-200" viewBox="0 0 24 24">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.7a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"/>
                             </svg>
@@ -452,7 +474,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/80 text-center py-6 text-xs text-slate-500">
+    <footer class="border-t border-purple-900/40 text-center py-6 text-xs text-slate-500">
         <p>&copy; 2026 Fathan Mahad Madani. All rights reserved.</p>
     </footer>
 
